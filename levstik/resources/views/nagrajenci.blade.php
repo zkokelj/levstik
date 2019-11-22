@@ -1,9 +1,9 @@
 @extends('layout')
 
 @section('content')
-    <h1>Domov</h1>
+    <h1>Nagrajenci</h1>
 @endsection
 
 @section('title')
-    Domov
+    Nagrajenci
 @endsection
