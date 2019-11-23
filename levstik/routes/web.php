@@ -11,10 +11,22 @@
 |
 */
 
+use App\Http\Controllers\WinnersController;
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/nagrajenci', function () {
-    return view('nagrajenci');
-});
+
+Route::resource('/nagrajenci', 'WinnersController');
+
+/*
+Route::get('/nagrajenci', 'WinnersController@index');
+Route::get('/nagrajenci/create', 'WinnersController@create');
+Route::get('nagrajenci/{winner}', 'WinnersController@show');
+Route::post('/nagrajenci', 'WinnersController@store');
+Route::get('/nagrajenci/{winner}/edit', 'WinnersController@edit');
+Route::patch('/nagrajenci/{winner}', 'WinnersController@update');
+Route::delete('/nagrajenci/{winner}', 'WinnersController@destory');
+*/
+

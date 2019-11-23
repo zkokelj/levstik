@@ -16,7 +16,7 @@ class CreateLevstikWinnersTable extends Migration
         Schema::create('levstik_winners', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('full_name');
-            $table->year('year');
+            $table->text('year');
             $table->text("short_info");
             // TODO: How to save a photo? Just a path to file?
             $table->text('description');
