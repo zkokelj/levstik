@@ -30,3 +30,4 @@ Route::patch('/nagrajenci/{winner}', 'WinnersController@update');
 Route::delete('/nagrajenci/{winner}', 'WinnersController@destory');
 */
 
+

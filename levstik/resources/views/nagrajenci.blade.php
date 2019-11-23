@@ -4,7 +4,7 @@
     <h1>Nagrajenci</h1>
     <ul>
     @foreach ($winners as $winner)
-        <li>{{ $winner->full_name }}</li>
+    <li>{{ $winner->full_name }}  {{ $winner->id }}</li>
     @endforeach
     </ul>
 @endsection

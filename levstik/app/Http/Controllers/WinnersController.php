@@ -57,7 +57,7 @@ class WinnersController extends Controller
      */
     public function show($id)
     {
-        //
+        //TODO: 
     }
 
     /**
@@ -68,7 +68,8 @@ class WinnersController extends Controller
      */
     public function edit($id)
     {
-        //
+        $winner = LevstikWinner::findOrFail($id);
+        return view('edit', compact('winner'));
     }
 
     /**
@@ -80,7 +81,15 @@ class WinnersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $winner = LevstikWinner::findOrFail($id);
+        $winner->full_name = request("full_name");
+        $winner->year = request("year");
+        $winner->short_info = "a";
+        $winner->description = "a";
+
+        $winner->save();        
+
+        return redirect('/nagrajenci');
     }
 
     /**
@@ -91,6 +100,8 @@ class WinnersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        LevstikWinner::findOrFail($id)->delete();
+
+        return redirect('/nagrajenci');
     }
 }
