@@ -37,13 +37,14 @@ class WinnersController extends Controller
      */
     public function store(Request $request)
     {
-        $winner = new LevstikWinner();
-        $winner->full_name = request("full_name");
-        $winner->year = request("year");
-        $winner->short_info = request("short_info");
-        $winner->description = request("description");
+        $attributes = request()->validate([
+            'full_name' => ['required', 'min:3', 'max:70'],
+            'year' => ['required', 'min:4', 'max:4'] ,
+            'short_info' => ['required', 'min:50', 'max:1000'],
+            'description' => ['required', 'min:50', 'max:10000']
+        ]);
 
-        $winner->save();
+        LevstikWinner::create($attributes);
 
         return redirect('/nagrajenci');
     }

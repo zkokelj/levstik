@@ -47,7 +47,7 @@
             <div class="card">
               <div class="card-image">
                 <figure class="image is-4by3">
-                  <img src="https://source.unsplash.com/random/1280x960" alt="Placeholder image">
+                  <img src="https://source.unsplash.com/random/1280x960" alt="Slika nagrajenca">
                 </figure>
               </div>
                 
@@ -56,7 +56,7 @@
           <div class="column" style="margin: 20px">
                 <div class="card-image">
                         <figure class="image is-4by3">
-                          <img src="https://source.unsplash.com/random/1280x960" alt="Placeholder image">
+                          <img src="https://source.unsplash.com/random/1280x960" alt="Slika aleje">
                         </figure>
                       </div>
           </div>
