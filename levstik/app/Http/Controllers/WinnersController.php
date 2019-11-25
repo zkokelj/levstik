@@ -16,7 +16,6 @@ class WinnersController extends Controller
     public function index()
     {
         $winners = LevstikWinner::all();
-
         return view('nagrajenci', compact('winners'));
     }
 
@@ -44,7 +43,7 @@ class WinnersController extends Controller
         $winner->short_info = request("short_info");
         $winner->description = request("description");
 
-        $winner->save();        
+        $winner->save();
 
         return redirect('/nagrajenci');
     }
@@ -57,7 +56,8 @@ class WinnersController extends Controller
      */
     public function show($id)
     {
-        //TODO: 
+        $winner = LevstikWinner::findOrFail($id);
+        return view('prikaz', compact('winner'));
     }
 
     /**
@@ -87,7 +87,7 @@ class WinnersController extends Controller
         $winner->short_info = "a";
         $winner->description = "a";
 
-        $winner->save();        
+        $winner->save();
 
         return redirect('/nagrajenci');
     }
