@@ -8,12 +8,11 @@
     <link rel="stylesheet" href="https://unpkg.com/bulma@0.8.0/css/bulma.min.css" />
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/cards.css">
-
 </head>
 
 
 <body>
-        <nav class="navbar is-info">
+        <nav class="navbar is-danger">
                 <div class="navbar-brand">
                     <a class="navbar-item" href="#">
                         LEVSTIKOVA ALERJA NAGRAJENCEV

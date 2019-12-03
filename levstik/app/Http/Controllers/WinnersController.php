@@ -15,7 +15,7 @@ class WinnersController extends Controller
      */
     public function index()
     {
-        $winners = LevstikWinner::all();
+        $winners = LevstikWinner::orderBy('year', 'desc')->get();
         return view('nagrajenci', compact('winners'));
     }
 
@@ -40,8 +40,8 @@ class WinnersController extends Controller
         $attributes = request()->validate([
             'full_name' => ['required', 'min:3', 'max:70'],
             'year' => ['required', 'min:4', 'max:4'] ,
-            'short_info' => ['required', 'min:50', 'max:1000'],
-            'description' => ['required', 'min:50', 'max:10000']
+            'short_info' => ['required', 'min:5', 'max:1000'],
+            'description' => ['required', 'min:5', 'max:10000']
         ]);
 
         LevstikWinner::create($attributes);

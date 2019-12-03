@@ -61,6 +61,18 @@
                       </div>
           </div>
         </div>
+
+        <form method="POST" action="/nagrajenci/{{$winner->id}}">
+          @method('DELETE')
+          @csrf
+
+          <div class="field">
+            <div class="control">
+              <button type="submit" class="button">Izbriši</button>
+            </div>
+          </div>
+
+        </form>
       </section>
  
 @endsection
