@@ -61,18 +61,34 @@
                       </div>
           </div>
         </div>
+        
+        @if (Auth::check())
+          <form method="GET" action="/nagrajenci/{{$winner->id}}/edit">
+            @csrf
 
-        <form method="POST" action="/nagrajenci/{{$winner->id}}">
-          @method('DELETE')
-          @csrf
-
-          <div class="field">
-            <div class="control">
-              <button type="submit" class="button">Izbriši</button>
+            <div class="field">
+              <div class="control">
+                <button type="submit" class="button">Uredi</button>
+              </div>
             </div>
-          </div>
+          </form>
+          <hr>
+        @endif
+       
+        @if (Auth::check())
+          <form method="POST" action="/nagrajenci/{{$winner->id}}">
+            @method('DELETE')
+            @csrf
 
-        </form>
+            <div class="field">
+              <div class="control">
+                <button type="submit" class="button is-danger">Izbriši</button>
+              </div>
+            </div>
+          </form>
+        @endif
+
+        
       </section>
  
 @endsection

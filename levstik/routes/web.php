@@ -18,16 +18,20 @@ Route::get('/', function () {
 });
 
 
-Route::resource('/nagrajenci', 'WinnersController');
+//Route::resource('/nagrajenci', 'WinnersController');
 
-/*
+
 Route::get('/nagrajenci', 'WinnersController@index');
-Route::get('/nagrajenci/create', 'WinnersController@create');
+Route::get('/nagrajenci/create', 'WinnersController@create')->middleware('auth');
 Route::get('nagrajenci/{winner}', 'WinnersController@show');
-Route::post('/nagrajenci', 'WinnersController@store');
-Route::get('/nagrajenci/{winner}/edit', 'WinnersController@edit');
-Route::patch('/nagrajenci/{winner}', 'WinnersController@update');
-Route::delete('/nagrajenci/{winner}', 'WinnersController@destory');
-*/
+Route::post('/nagrajenci', 'WinnersController@store')->middleware('auth');
+Route::get('/nagrajenci/{winner}/edit', 'WinnersController@edit')->middleware('auth');;
+Route::patch('/nagrajenci/{winner}', 'WinnersController@update')->middleware('auth');
+Route::delete('/nagrajenci/{winner}', 'WinnersController@destory')->middleware('auth');
 
 
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

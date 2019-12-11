@@ -52,13 +52,14 @@ class WinnersController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  String  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($name)
     {
-        $winner = LevstikWinner::findOrFail($id);
+        $winner = LevstikWinner::findOrFail($name);
         return view('prikaz', compact('winner'));
+        $pro = Projects::where('pro_title', $name)->first();
     }
 
     /**
