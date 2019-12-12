@@ -3,7 +3,7 @@
 @section('content')
     <h1 class="title">Nov Levstikov nagrajenec</h1>
 
-    <form method="POST" action="/nagrajenci">
+    <form method="POST" action="/nagrajenci" enctype="multipart/form-data">
 
         {{ csrf_field() }}
         <div class="field is-horizontal">
@@ -33,40 +33,26 @@
             </div>
             </div>
         </div>
-        <div class="field is-horizontal">
-            <div class="field-label is-normal">
-                    <div class="file has-name is-right">
-                            <label class="file-label">
-                              <input class="file-input" type="file" name="image1">
-                              <span class="file-cta">
-                                <span class="file-label">
-                                  Slika nagrajenca
-                                </span>
-                              </span>
-                              <span class="file-name">
-                                Screen Shot 2017-07-29 at 15.54.25.png
-                              </span>
-                            </label>
-                          </div>
-            </div></div>
-
+    
 
                 <div class="field is-horizontal">
                         <div class="field-label is-normal">
-                                <div class="file has-name is-right">
-                                        <label class="file-label">
-                                          <input class="file-input" type="file" name="image2">
-                                          <span class="file-cta">
-                                            <span class="file-label">
-                                              Slika aleje
-                                            </span>
-                                          </span>
-                                          <span class="file-name">
-                                            Screen Shot 2017-07-29 at 15.54.25.png
-                                          </span>
-                                        </label>
+                                <div class="file has-sname is-risght">
+                                        <label class="file-label2">
+                                            Slika osebe</label>
+                                        <input class="file-input2" type="file" name="image1">
+                                    </div>
+            </div></div>
+
+                <div class="field is-horizontal">
+                        <div class="field-label is-normal">
+                                <div class="file has-sname is-risght">
+                                        <label class="file-label2">
+                                               Slika aleje</label>
+                                          <input class="file-input2" type="file" name="image2">
                                       </div>
             </div></div>
+
         
         <div class="field is-horizontal">
             <div class="field-label is-normal">

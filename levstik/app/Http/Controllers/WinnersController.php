@@ -37,14 +37,23 @@ class WinnersController extends Controller
      */
     public function store(Request $request)
     {
-        $attributes = request()->validate([
+        $attributes = tap(request()->validate([
             'full_name' => ['required', 'min:3', 'max:70'],
             'year' => ['required', 'min:4', 'max:4'] ,
             'short_info' => ['required', 'min:5', 'max:1000'],
             'description' => ['required', 'min:5', 'max:10000']
-        ]);
+        ]),  function() {
+            if(request()->hasFile('image1')){
+                request()->validate(['image1' => 'required|file|image|max:5000']);
+            }
 
-        LevstikWinner::create($attributes);
+            if(request()->hasFile('image2')){
+                request()->validate(['image2' => 'required|file|image|max:5000']);
+            }
+        });
+
+        $winner = LevstikWinner::create($attributes);
+        $this->storeImage($winner);
 
         return redirect('/nagrajenci');
     }
@@ -102,8 +111,22 @@ class WinnersController extends Controller
      */
     public function destroy($id)
     {
-        LevstikWinner::findOrFail($id)->delete();
+        LevstikWinner::destroy($id);
 
         return redirect('/nagrajenci');
+    }
+
+    private function storeImage($winner){
+        if(request()->has('image1')){
+            $winner->update([
+                'image1' => request()->image1->store('uploads', 'public'),
+            ]);
+        }
+
+        if(request()->has('image2')){
+            $winner->update([
+                'image2' => request()->image2->store('uploads', 'public'),
+            ]);
+        }
     }
 }

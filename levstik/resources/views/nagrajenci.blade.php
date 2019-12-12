@@ -9,8 +9,8 @@
                     <div class="card large">
                         <div class="card-image">
                             <figure class="image">
-                                    <img src="https://images.unsplash.com/photo-1475778057357-d35f37fa89dd?dpr=1&auto=compress,format&fit=crop&w=1920&h=&q=80&cs=tinysrgb&crop=" alt="Image">
-                            </figure>
+                                    <img src="{{ asset('storage/'. $w['image1'] ) }}" >
+                                </figure>
                         </div>
                         <div class="card-content">
                             <div class="media">

@@ -18,8 +18,8 @@ class CreateLevstikWinnersTable extends Migration
             $table->string('full_name');
             $table->text('year');
             $table->text("short_info");
-            $table->mediumText('image1')->nullable();
-            $table->mediumText('image2')->nullable();
+            $table->string('image1')->nullable();
+            $table->string('image2')->nullable();
             $table->text('description');
             $table->timestamps();
         });

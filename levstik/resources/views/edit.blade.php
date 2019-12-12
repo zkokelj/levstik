@@ -3,7 +3,7 @@
 @section('content')
     <h1>Uredi</h1>
     
-    <form method="POST" action="/nagrajenci/{{ $winner->id }}">
+    <form method="POST" action="/nagrajenci/{{ $winner->id }}" enctype="multipart/form-data">
 
         @csrf
         @method('PATCH')

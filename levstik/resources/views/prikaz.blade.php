@@ -27,7 +27,7 @@
                     </tr>
                     <tr>
                       <td>Address:</td>
-                      <td>Guru's Lab</td>
+                      <td>{{$winner->image2}}</td>
                     </tr>
                     <tr>
                       <td>Phone:</td>
@@ -44,6 +44,8 @@
           </div>
           <div class="column" style="margin: 20px">
             <!-- Profile picture -->
+
+            <!--
             <div class="card">
               <div class="card-image">
                 <figure class="image is-4by3">
@@ -59,8 +61,24 @@
                           <img src="https://source.unsplash.com/random/1280x960" alt="Slika aleje">
                         </figure>
                       </div>
-          </div>
+          </div> -->
+
+
+          @if($winner->image1)
+          <div class="column" style="margin: 20px">
+            <img src="{{ asset('storage/'. $winner->image1 ) }}" >
+          </div>  
+          @endif
+
+
+          @if($winner->image2)
+          <div class="column" style="margin: 20px">
+            <img src="{{ asset('storage/'. $winner->image2 ) }}" >
+          </div>  
+          @endif
         </div>
+
+        <hr>
         
         @if (Auth::check())
           <form method="GET" action="/nagrajenci/{{$winner->id}}/edit">
