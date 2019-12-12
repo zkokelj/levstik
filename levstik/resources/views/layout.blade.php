@@ -14,7 +14,7 @@
 <body>
         <nav class="navbar is-danger">
                 <div class="navbar-brand">
-                    <a class="navbar-item" href="#">
+                    <a class="navbar-item" href="/">
                         LEVSTIKOVA ALERJA NAGRAJENCEV
                     </a>
                 </div>
