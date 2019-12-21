@@ -42,12 +42,12 @@ class WinnersController extends Controller
             'year' => ['required', 'min:4', 'max:4'] ,
             'short_info' => ['required', 'min:5', 'max:1000'],
             'description' => ['required', 'min:5', 'max:10000']
-        ]),  function() {
-            if(request()->hasFile('image1')){
+        ]), function () {
+            if (request()->hasFile('image1')) {
                 request()->validate(['image1' => 'required|file|image|max:5000']);
             }
 
-            if(request()->hasFile('image2')){
+            if (request()->hasFile('image2')) {
                 request()->validate(['image2' => 'required|file|image|max:5000']);
             }
         });
@@ -93,10 +93,27 @@ class WinnersController extends Controller
     public function update(Request $request, $id)
     {
         $winner = LevstikWinner::findOrFail($id);
-        $winner->full_name = request("full_name");
-        $winner->year = request("year");
-        $winner->short_info = "a";
-        $winner->description = "a";
+        $attributes = tap(request()->validate([
+            'full_name' => ['required', 'min:3', 'max:70'],
+            'year' => ['required', 'min:4', 'max:4'] ,
+            'short_info' => ['required', 'min:5', 'max:1000'],
+            'description' => ['required', 'min:5', 'max:10000']
+        ]), function () {
+            if (request()->hasFile('image1')) {
+                request()->validate(['image1' => 'required|file|image|max:5000']);
+            }
+
+            if (request()->hasFile('image2')) {
+                request()->validate(['image2' => 'required|file|image|max:5000']);
+            }
+        });
+
+        // dd($attributes);
+
+        $winner->full_name = $attributes['full_name'];
+        $winner->year = $attributes['year'];
+        $winner->short_info = $attributes['short_info'];
+        $winner->description = $attributes['description'];
 
         $winner->save();
 
@@ -116,14 +133,15 @@ class WinnersController extends Controller
         return redirect('/nagrajenci');
     }
 
-    private function storeImage($winner){
-        if(request()->has('image1')){
+    private function storeImage($winner)
+    {
+        if (request()->has('image1')) {
             $winner->update([
                 'image1' => request()->image1->store('uploads', 'public'),
             ]);
         }
 
-        if(request()->has('image2')){
+        if (request()->has('image2')) {
             $winner->update([
                 'image2' => request()->image2->store('uploads', 'public'),
             ]);
