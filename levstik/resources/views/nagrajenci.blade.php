@@ -24,7 +24,7 @@
                             </div>
                             <div>
                                 <a href="/nagrajenci/{{ $w['id'] }}">
-                                    <button class="button is-danger is-rounded">Več informacij</button>
+                                <button class="button is-danger is-rounded">{{__('text.more_info')}}</button>
                                 </a>
                             </div>
                         </div>

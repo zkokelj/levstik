@@ -28,6 +28,7 @@ Route::post('/nagrajenci', 'WinnersController@store')->middleware('auth');
 Route::get('/nagrajenci/{winner}/edit', 'WinnersController@edit')->middleware('auth');;
 Route::patch('/nagrajenci/{winner}', 'WinnersController@update')->middleware('auth');
 Route::delete('/nagrajenci/{winner}', 'WinnersController@destory')->middleware('auth');
+Route::post('/language', 'LanguageController@setLanguage');
 
 
 

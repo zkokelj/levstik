@@ -43,25 +43,6 @@
             </div>
           </div>
           <div class="column" style="margin: 20px">
-            <!-- Profile picture -->
-
-            <!--
-            <div class="card">
-              <div class="card-image">
-                <figure class="image is-4by3">
-                  <img src="https://source.unsplash.com/random/1280x960" alt="Slika nagrajenca">
-                </figure>
-              </div>
-                
-            </div>
-          </div>
-          <div class="column" style="margin: 20px">
-                <div class="card-image">
-                        <figure class="image is-4by3">
-                          <img src="https://source.unsplash.com/random/1280x960" alt="Slika aleje">
-                        </figure>
-                      </div>
-          </div> -->
 
 
           @if($winner->image1)
@@ -86,7 +67,7 @@
 
             <div class="field">
               <div class="control">
-                <button type="submit" class="button">Uredi</button>
+                <button type="submit" class="button">{{__('text.edit')}}</button>
               </div>
             </div>
           </form>

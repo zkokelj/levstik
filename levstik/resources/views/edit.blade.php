@@ -173,7 +173,7 @@
 
       <div class="field">
         <div class="control">
-          <button type="submit" class="button is-danger">Izbriši</button>
+          <button type="submit" class="button is-danger">{{__('text.delete')}}</button>
         </div>
       </div>
     </form>
