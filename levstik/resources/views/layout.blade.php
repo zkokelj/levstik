@@ -39,10 +39,21 @@
                                         <form method="POST" action="/language">
                                             @csrf
                                             <select name='language' onchange="this.form.submit()">
-                                              <option>Izbira jezika</option>
-                                              <option>Slovenščina</option>
-                                              <option>English</option>
-                                              <option>Chinese</option>
+                                              <option
+                                              @if ( Config::get('app.locale') == 'si')
+                                                    selected
+                                                @endif
+                                              >Slovenščina </option>
+                                              <option
+                                              @if ( Config::get('app.locale') == 'en')
+                                                    selected
+                                                @endif
+                                              >English</option>
+                                              <option
+                                              @if ( Config::get('app.locale') == 'ch')
+                                                    selected
+                                                @endif
+                                              >Chinese</option>
                                             </select>
                                           </form>      
                                 </div>
