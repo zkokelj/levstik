@@ -3,22 +3,10 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Http\Request;
+use App;
 
 class LanguageMiddleware
 {
-
-    protected $app;
-
-    public function __construct(Application $app, Request $request)
-    {
-        if($locale = $request->header('locale')){
-            if(in_array($locale, ['en', 'si', 'ch'])){
-                $app->setLocale($locale);
-            }
-        }
-    }
 
     /**
      * Handle an incoming request.
@@ -29,8 +17,9 @@ class LanguageMiddleware
      */
     public function handle($request, Closure $next)
     {
+        if(session()->has('locale')){
+            App::setLocale(session()->get('locale'));
+        }
         return $next($request);
     }
-
-
 }

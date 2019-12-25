@@ -39,6 +39,7 @@
                                         <form method="POST" action="/language">
                                             @csrf
                                             <select name='language' onchange="this.form.submit()">
+                                              <option>Izbira jezika</option>
                                               <option>Slovenščina</option>
                                               <option>English</option>
                                               <option>Chinese</option>

@@ -9,22 +9,17 @@ use App;
 class LanguageController extends Controller
 {
     public function setLanguage(){
-        $language = request()['language']; 
-        if($language == 'Chinese'){
-            App::setLocale('ch');
-            Session::put('locale', 'ch');
-            //dd($language);
-            return redirect()->back();
-        }else if($language == 'English'){
-            App::setLocale('en');
-            session()->put('locale', 'en');
-            //dd($language);
-            return redirect()->back();
-        }else{
-            App::setLocale('si');
-            session()->put('locale', 'si');
-            return redirect()->back();
+        $language = request()['language'];
+
+        $langLocale = "si";
+        if($language == "English"){
+            $langLocale = "en";
+        }else if($language == "Chinese"){
+            $langLocale = "ch";
         }
+
+        App::setlocale($langLocale);
+        session()->put('locale', $langLocale);
+        return redirect()->back();
     }
-    
 }
