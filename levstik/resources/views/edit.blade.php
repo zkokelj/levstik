@@ -5,7 +5,7 @@
     
 
 
-    <form method="POST" action="/nagrajenci/{{ $winner->id }}" enctype="multipart/form-data">
+    <form method="POST" action="/nagrajenci/{{ $winner->full_name_id }}" enctype="multipart/form-data">
         @csrf
         @method('PATCH')
         
@@ -78,7 +78,7 @@
             <div class="field-body">
             <div class="field">
                 <div class="control">
-                <textarea class="textarea" placeholder="Explain how we can help you">{{$winner->short_info}}</textarea>
+                <textarea class="textarea" name="short_info_en" placeholder="Explain how we can help you">{{$winner->short_info}}</textarea>
                 </div>
             </div>
             </div>
@@ -92,7 +92,7 @@
             <div class="field-body">
             <div class="field">
                 <div class="control">
-                <textarea class="textarea" placeholder="Explain how we can help you">{{$winner->short_info}}</textarea>
+                <textarea class="textarea" name="short_info_ch" placeholder="Explain how we can help you">{{$winner->short_info}}</textarea>
                 </div>
             </div>
             </div>
@@ -121,7 +121,7 @@
             <div class="field-body">
             <div class="field">
                 <div class="control">
-                <textarea class="textarea" placeholder="Explain how we can help you">{{$winner->description}}</textarea>
+                <textarea class="textarea" name="description_en" placeholder="Explain how we can help you">{{$winner->description}}</textarea>
                 </div>
             </div>
             </div>
@@ -135,7 +135,7 @@
             <div class="field-body">
             <div class="field">
                 <div class="control">
-                <textarea class="textarea" placeholder="Explain how we can help you">{{$winner->description}}</textarea>
+                <textarea class="textarea" name="description_ch" placeholder="Explain how we can help you">{{$winner->description}}</textarea>
                 </div>
             </div>
             </div>
@@ -167,7 +167,7 @@
 
 
     @if (Auth::check())
-    <form method="POST" action="/nagrajenci/{{$winner->id}}">
+    <form method="POST" action="/nagrajenci/{{$winner->full_name_id}}">
       @method('DELETE')
       @csrf
 

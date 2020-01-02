@@ -62,7 +62,7 @@
         <hr>
         
         @if (Auth::check())
-          <form method="GET" action="/nagrajenci/{{$winner->id}}/edit">
+          <form method="GET" action="/nagrajenci/{{$winner->full_name_id}}/edit">
             @csrf
 
             <div class="field">

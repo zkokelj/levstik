@@ -16,11 +16,16 @@ class CreateLevstikWinnersTable extends Migration
         Schema::create('levstik_winners', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('full_name');
+            $table->string('full_name_id');
             $table->text('year');
-            $table->text("short_info");
+            $table->string("short_info");
+            $table->string("short_info_en");
+            $table->string("short_info_ch");
             $table->string('image1')->nullable();
             $table->string('image2')->nullable();
             $table->text('description');
+            $table->text('description_en');
+            $table->text('description_ch');
             $table->timestamps();
         });
     }

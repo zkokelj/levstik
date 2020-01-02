@@ -20,10 +20,10 @@
                                 </div>
                             </div>
                             <div class="content">
-                                    {{ $w['short_info'] }}
+                                    {{ $w['short_info'] }}  
                             </div>
                             <div>
-                                <a href="/nagrajenci/{{ $w['id'] }}">
+                                <a href="/nagrajenci/{{ $w['full_name_id'] }}">
                                 <button class="button is-danger is-rounded">{{__('text.more_info')}}</button>
                                 </a>
                             </div>

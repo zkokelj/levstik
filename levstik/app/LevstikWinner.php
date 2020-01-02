@@ -8,4 +8,6 @@ class LevstikWinner extends Model
 {
     protected $table = 'levstik_winners';
     protected $guarded = [];
+
+   
 }

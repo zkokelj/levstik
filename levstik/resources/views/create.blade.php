@@ -75,7 +75,7 @@
             <div class="field-body">
             <div class="field">
                 <div class="control">
-                <textarea class="textarea" placeholder="Explain how we can help you"></textarea>
+                <textarea class="textarea" name="short_info_en" placeholder="Explain how we can help you"></textarea>
                 </div>
             </div>
             </div>
@@ -89,7 +89,7 @@
             <div class="field-body">
             <div class="field">
                 <div class="control">
-                <textarea class="textarea" placeholder="Explain how we can help you"></textarea>
+                <textarea class="textarea" name="short_info_ch" placeholder="Explain how we can help you"></textarea>
                 </div>
             </div>
             </div>
@@ -118,7 +118,7 @@
             <div class="field-body">
             <div class="field">
                 <div class="control">
-                <textarea class="textarea" placeholder="Explain how we can help you"></textarea>
+                <textarea class="textarea" name="description_en" placeholder="Explain how we can help you"></textarea>
                 </div>
             </div>
             </div>
@@ -132,7 +132,7 @@
             <div class="field-body">
             <div class="field">
                 <div class="control">
-                <textarea class="textarea" placeholder="Explain how we can help you"></textarea>
+                <textarea class="textarea" name="description_ch" placeholder="Explain how we can help you"></textarea>
                 </div>
             </div>
             </div>
