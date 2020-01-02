@@ -8,13 +8,19 @@
           <h3 class="title is-2">{{$winner->full_name}}</h3>
           <h4 class="subtitle is-5">{{$winner->year}}</h4>
           <div class="container">
-            {{$winner->description}}
+          @if ( Config::get('app.locale') == 'si')
+            {{ $winner->description }}  
+          @elseif ( Config::get('app.locale') == 'en')
+            {{ $winner->description_en }}
+          @elseif ( Config::get('app.locale') == 'ch')
+            {{ $winner->description_ch }}
+          @endif
           </div>
         </div>
     
         <div class="columns has-same-height is-gapless">
           <div class="column" style="margin: 20px">
-            <!-- Profile -->
+            <!-- Profile 
             <div class="card">
               <div class="card-content">
                 <h3 class="title is-4">Informacije</h3>
@@ -43,6 +49,8 @@
             </div>
           </div>
           <div class="column" style="margin: 20px">
+
+          -->
 
 
           @if($winner->image1)

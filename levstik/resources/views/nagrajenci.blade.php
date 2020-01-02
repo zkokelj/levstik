@@ -20,7 +20,13 @@
                                 </div>
                             </div>
                             <div class="content">
+                                @if ( Config::get('app.locale') == 'si')
                                     {{ $w['short_info'] }}  
+                                @elseif ( Config::get('app.locale') == 'en')
+                                    {{ $w['short_info_en'] }}
+                                @elseif ( Config::get('app.locale') == 'ch')
+                                    {{ $w['short_info_ch'] }}
+                                @endif
                             </div>
                             <div>
                                 <a href="/nagrajenci/{{ $w['full_name_id'] }}">
