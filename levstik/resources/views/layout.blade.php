@@ -125,6 +125,16 @@
                   <p>   
                         @if (Auth::check())
                         <a href="/nagrajenci/create"><strong>Dodaj novega nagrajenca</strong></a>
+                        <hr>
+                        <a href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                      document.getElementById('logout-form').submit();">
+                         <strong>{{ __('Logout') }}</strong>
+                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                     </a>
+
                         @endif
                   </p>
                 </div>
