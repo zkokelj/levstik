@@ -19,103 +19,38 @@
 
 <body>
 
-        <!--<img src="{{url('/images/Fran_levstik.jpg')}}" alt="Image"/>
-        <nav class="navbar is-danger">
-                <div class="navbar-brand">
-                    <a class="navbar-item" href="/">
-                      
-                        {{__('text.title')}}
-                    </a>
-                </div>
-                <div id="navbarExampleTransparentExample" class="navbar-menu" style="margin-left: 7%">
-                    <div class="navbar-start is-link">
-                        <a class="navbar-item" href="/"> 
-                            {{__('text.home')}}
-                            <i class="fa fa-home" style="margin-left:5px;"></i>
-                        </a>
-                        <a class="navbar-item" href="/nagrajenci">
-                            {{__('text.winners')}}
-                            <i class="fa fa-feather" style="margin-left:5px;"></i>
-                        </a>
-                        </div>
-                    </div>
 
-                    <div class="navbar-end">
-                        <div class="navbar-item">
-                            <div class="control">
-                                <div class="select is-primary">
-                                        <form method="POST" action="/language">
-                                            @csrf
-                                            <select name='language' onchange="this.form.submit()">
-                                              <option
-                                              @if ( Config::get('app.locale') == 'si')
-                                                    selected
-                                                @endif
-                                              >Slovenščina </option>
-                                              <option
-                                              @if ( Config::get('app.locale') == 'en')
-                                                    selected
-                                                @endif
-                                              >English</option>
-                                              <option
-                                              @if ( Config::get('app.locale') == 'ch')
-                                                    selected
-                                                @endif
-                                              >Chinese</option>
-                                            </select>
-                                          </form>      
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-            </nav>
-          -->
-        
-          <!--
-          <section class="hero is-info">
-              <div class="hero-head" style="padding-top: 10px; padding-bottom: 10px;">
-                <div class="columns">
-                  <div class="column is-12">
-                    <div class="container content">
-                        <img src="{{url('/images/Levstik_logo.jpg')}}" alt="Image" style="vertical-align:middle; display:inline"/>
-                        <h1 class="title" style="display: inline;">  Levstikova aleja nagrajencev </h1><br>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-          -->
-
-            <section class="hero is-info ">
-                <div class="hero-head">
-                    <nav class="navbar">
-                        <div class="navbar-brand">
-                            <a class="navbar-item" href="/">
-                              
-                                {{__('text.title')}}
-                            </a>
-                        </div>
-                        <div class="container">
+        <section class="hero is-info ">
+            <div class="hero-head">
+                <nav class="navbar">
+                    <div class="navbar-brand">
+                        <a class="navbar-item" href="/">
+                          
+                            {{__('text.title')}}
                             
-                            <div id="navbarMenu" class="navbar-menu">
-                                <div class="navbar-end">
-                                    <div class="tabs is-right">
-                                        <ul>
-                                            <li class="is-active"><a href="/">{{__('text.home')}}</a></li>
-                                            <li><a href="/nagrajenci">{{__('text.winners')}}</a></li>
-                                            <li><a href="/o_projektu">{{__('text.title')}}</a></li>
-                                        </ul> 
-                                    </div>
+                        </a>
+                    </div>
+                    <div class="container">
+                        
+                        <div id="navbarMenu" class="navbar-menu">
+                            <div class="navbar-end">
+                                <div class="tabs is-right">
+
+                                    <ul>
+                                        <li class="{{ Request::segment(1) == "" ? 'is-active' : '' }}"><a href="/">{{__('text.home')}}</a></li>
+                                        <li class="{{ Request::segment(1) === 'nagrajenci' ? 'is-active' : '' }}"><a
+                                          
+                                          href="/nagrajenci">{{__('text.winners')}}</a></li>
+                                        <li class="{{ Request::segment(1) === 'o_projektu' ? 'is-active' : '' }}"><a href="/o_projektu">{{__('text.title')}}</a></li>
+                                    </ul> 
                                 </div>
                             </div>
                         </div>
-                    </nav>
-                </div>
-                
-            </section>
-
+                    </div>
+                </nav>
+            </div>
             
+        </section>
         
         <section >
         @yield('content')

@@ -37,15 +37,6 @@
     @endforeach
 </section>
 
-
-
-
-
-
-
-   
-    
-
 @endsection
 
 @section('title')
