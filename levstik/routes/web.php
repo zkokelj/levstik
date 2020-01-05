@@ -17,7 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+Route::get('/o_projektu', function () {
+    return view('about');
+});
 //Route::resource('/nagrajenci', 'WinnersController');
 
 

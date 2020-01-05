@@ -11,6 +11,7 @@ return [
     'more_info' => '更多信息',
     'edit' => '编辑',
     'delete' => '删除',
+    'logout' => '删除'
 
 
 ];

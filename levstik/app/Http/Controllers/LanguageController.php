@@ -8,13 +8,14 @@ use App;
 
 class LanguageController extends Controller
 {
-    public function setLanguage(){
+    public function setLanguage()
+    {
         $language = request()['language'];
-
+        
         $langLocale = "si";
-        if($language == "English"){
+        if ($language == "English") {
             $langLocale = "en";
-        }else if($language == "Chinese"){
+        } elseif ($language == "Chinese") {
             $langLocale = "ch";
         }
 

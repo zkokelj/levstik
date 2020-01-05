@@ -1,57 +1,49 @@
 @extends('layout')
 
 @section('content')
-
+<section class="container">
     @foreach(array_chunk($winners->toArray(), 3) as $x)
-        <div class="row columns">
-            @foreach($x as $w)
-            <div class="column is-one-third">
-                    <div class="card large">
-                        <div class="flip-card">
-                            <div class="flip-card-inner">
-                                <div class="card-image flip-card-front">
-                                    <figure class="image">
-                                            <img src="{{ asset('storage/'. $w['image1'] ) }}" >
-                                        </figure>
-                                </div>
+    <div class="columns features">
+        @foreach($x as $w)
+        <div class="column is-4">
+            <div class="card is-shady">
+                <div class="card-image has-text-centered">
+                    
+                    <img class="card-image-img" src="{{ asset('storage/'. $w['image1'] ) }}">
+                </div>
+                <div class="card-content">
+                    <div class="content">
+                        <h2>{{$w['year']}}</h2>
+                        <h3>{{$w['full_name']}}</h3>
 
+                        <p>
+                            @if ( Config::get('app.locale') == 'si')
+                                {{ $w['short_info'] }}  
+                            @elseif ( Config::get('app.locale') == 'en')
+                                {{ $w['short_info_en'] }}
+                            @elseif ( Config::get('app.locale') == 'ch')
+                                {{ $w['short_info_ch'] }}
+                            @endif
+                        </p>
 
-                                <div class="card-image flip-card-back">
-                                        <figure class="image">
-                                                <img src="https://icon2.cleanpng.com/20180809/qvb/kisspng-delta-computers-rentals-clip-art-computer-icons-photo-icons-matt-symbol-png-image-picpng-5b6ce7aa28da27.9546927915338638501673.jpg" >
-                                            </figure>
-                                    </div>
-                                
-                            </div>
-                        </div>
-
-                        <div class="card-content">
-                                <div class="media">
-                                    <div class="media-content">
-                                        <p class="title is-4 no-padding">{{ $w['year'] }}</p>
-                                        <p class="subtitle is-3">{{ $w['full_name'] }}</p>
-                                    </div>
-                                </div>
-                                <div class="content">
-                                    @if ( Config::get('app.locale') == 'si')
-                                        {{ $w['short_info'] }}  
-                                    @elseif ( Config::get('app.locale') == 'en')
-                                        {{ $w['short_info_en'] }}
-                                    @elseif ( Config::get('app.locale') == 'ch')
-                                        {{ $w['short_info_ch'] }}
-                                    @endif
-                                </div>
-                                <div>
-                                    <a href="/nagrajenci/{{ $w['full_name_id'] }}">
-                                    <button class="button is-danger is-rounded">{{__('text.more_info')}}</button>
-                                    </a>
-                                </div>
-                            </div>
+                        <p>Purus semper eget duis at tellus at urna condimentum mattis. Non blandit massa enim nec. Integer enim neque volutpat ac tincidunt vitae semper quis. Accumsan tortor posuere ac ut consequat semper viverra nam.</p>
+                        <p><a href="#">Learn more</a></p>
                     </div>
                 </div>
-            @endforeach
+            </div>
         </div>
+        @endforeach
+    </div>
     @endforeach
+</section>
+
+
+
+
+
+
+
+   
     
 
 @endsection
