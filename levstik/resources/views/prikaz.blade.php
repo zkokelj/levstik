@@ -3,71 +3,82 @@
 @section('content')
 
 <section class="section" id="about">
-        <!-- Title -->
-        <div class="section-heading">
-          <h3 class="title is-2">{{$winner->full_name}}</h3>
-          <h4 class="subtitle is-5">{{$winner->year}}</h4>
-          <div class="container">
-          @if ( Config::get('app.locale') == 'si')
-            {{ $winner->description }}  
-          @elseif ( Config::get('app.locale') == 'en')
-            {{ $winner->description_en }}
-          @elseif ( Config::get('app.locale') == 'ch')
-            {{ $winner->description_ch }}
-          @endif
-          </div>
-        </div>
-    
-        <div class="columns has-same-height is-gapless">
-          <div class="column" style="margin: 20px">
-            <!-- Profile 
-            <div class="card">
-              <div class="card-content">
-                <h3 class="title is-4">Informacije</h3>
-    
-                <div class="content">
-                  <table class="table-profile">
-                    <tr>
-                      <th colspan="1"></th>
-                      <th colspan="2"></th>
-                    </tr>
-                    <tr>
-                      <td>Address:</td>
-                      <td>{{$winner->image2}}</td>
-                    </tr>
-                    <tr>
-                      <td>Phone:</td>
-                      <td>0123-456789</td>
-                    </tr>
-                    <tr>
-                      <td>Email:</td>
-                      <td>minion@despicable.me</td>
-                    </tr>
-                  </table>
-                </div>
-              </div>
+
+    <!-- START ARTICLE -->
+    <div class="card article">
+        <div class="card-content">
+                
+           
+            <div class="content article-body">
+                    <div class="media-center">
+                                                                
+                            <p>
+                                    
+                                </p>
+
+                                <section class="section">
+                                        <div class="columns">
+                                          <div class="column is-10 is-offset-1">
+                                            <div class="content is-medium">
+                                              <h2 class="subtitle">{{$winner->year}}</h2>
+                                              <h1 class="title">{{$winner->full_name}}</h1>
+                                              <p>
+                                                  @if ( Config::get('app.locale') == 'si')
+                                                  {{ $winner->description }}  
+                                                @elseif ( Config::get('app.locale') == 'en')
+                                                  {{ $winner->description_en }}
+                                                @elseif ( Config::get('app.locale') == 'ch')
+                                                  {{ $winner->description_ch }}
+                                                @endif
+                                              </p>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </section>
+
+                            
+
+                            <!-- Slideshow container -->
+                            <div class="slideshow-container">
+
+                                <!-- Full-width images with number and caption text -->
+                                <div class="mySlides fade">
+                                <div class="numbertext">1 / 2</div>
+                                <img src="{{ asset('storage/'. $winner->image1 ) }}" style="width:100%">
+                                </div>
+                            
+                                <div class="mySlides fade">
+                                <div class="numbertext">2 / 2</div>
+                                <img src="{{ asset('storage/'. $winner->image2 ) }}" style="width:100%">
+                                </div>
+                            
+                               
+                            
+                                <!-- Next and previous buttons -->
+                                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                            </div>
+                            <br>
+                            
+                            <!-- The dots/circles -->
+                            <div style="text-align:center">
+                                <span class="dot" onclick="currentSlide(1)"></span>
+                                <span class="dot" onclick="currentSlide(2)"></span>
+                            </div>
+                                                                    
+
+
+                        </div>
+                
+                
             </div>
-          </div>
-          <div class="column" style="margin: 20px">
-
-          -->
-
-
-          @if($winner->image1)
-          <div class="column" style="margin: 20px">
-            <img src="{{ asset('storage/'. $winner->image1 ) }}" >
-          </div>  
-          @endif
-
-
-          @if($winner->image2)
-          <div class="column" style="margin: 20px">
-            <img src="{{ asset('storage/'. $winner->image2 ) }}" >
-          </div>  
-          @endif
         </div>
+    </div>
+    <!-- END ARTICLE -->
 
-        <hr>
+
+
+      
         
         @if (Auth::check())
           <form method="GET" action="/nagrajenci/{{$winner->full_name_id}}/edit">
@@ -83,10 +94,10 @@
         @endif
        
       
-
+        </div>
         
       </section>
- 
+      <script src="{{url('/js/slideshow.js')}}"></script>
 @endsection
 
 @section('title')

@@ -17,7 +17,8 @@ return [
     'more_info' => 'Več informacij',
     'edit' => 'Uredi',
     'delete' => 'Izbriši',
-    'logout' => 'Odjava'
-
+    'logout' => 'Odjava',
+    'about_description' => 'Lorem ipsum, ....',
+    'construction' => 'Prihaja kmalu',
 
 ];

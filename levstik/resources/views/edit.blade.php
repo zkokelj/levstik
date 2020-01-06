@@ -149,7 +149,7 @@
             <div class="field">
                 <div class="control">
                 <button class="button is-primary" type="submit">
-                    Uredi
+                    Shrani
                 </button>
                 </div>
             </div>

@@ -82,19 +82,16 @@
                 <div class="hero-body">
                     <div class="container">
                         <h1 class="title">
-                            <i class="fa fa-bell"></i> Splentna stran v izdelavi.</h1>
+                            <i class="fa fa-bell"></i> {{__('text.construction')}}</h1>
                         <span class="tag is-black is-medium is-rounded">
-                                Prihaja v 2020!
+                                2020
                             </span>
                     </div>
                 </div>
             </section>
             <!-- END PROMO BLOCK -->
             
-          </div>
-
-    </section>
-    <!-- END ARTICLE FEED -->
+          
 
     <script src="{{url('/js/slideshow.js')}}"></script>
 @endsection

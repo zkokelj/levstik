@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title' => 'Levstikove aleje',
+    'title' => 'Levstik alleys',
     'description' => "    On the 184th anniversary of Fran Levstik's birth, Levstik's arcades with an alley of Levstik's lifetime achievement winners were solemnly opened under a pillar at the Consortium Bookstore.
 
     So on this floor are commemorative plaques with the names of the creators, without which it is difficult to imagine learning about quality children's and youth literature. As they wrote in the Youth Book, Levstik's arcades symbolize the publishing house's fundamental commitment to children's and youth literature and are a tribute to authors who received the most prestigious award for their lifetime work in the field of children's literature.
@@ -17,7 +17,9 @@ return [
     'more_info' => 'More info',
     'edit' => 'Edit',
     'delete' => 'Delete',
-    'logout' => 'Log out'
+    'logout' => 'Log out',
+    'about_description' => 'Lorem ipsum, ....',
+    'construction' => 'Cooming soon',
 
 
 ];

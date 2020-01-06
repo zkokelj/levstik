@@ -131,7 +131,7 @@ class WinnersController extends Controller
 
         $winner->save();
 
-        return redirect('/nagrajenci');
+        return redirect('/nagrajenci/'.$winner->full_name_id);
     }
  
     /**

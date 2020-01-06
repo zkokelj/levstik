@@ -77,6 +77,7 @@
                     {{__('text.madeby')}} <a href="https://www.linkedin.com/in/%C5%BEiga-kokelj-1b7a6337/">Žiga Kokelj</a>
                   </p>
                   <p>   
+                        <hr>
                         @if (Auth::check())
                         <a href="/nagrajenci/create"><strong>Dodaj novega nagrajenca</strong></a>
                         <hr>

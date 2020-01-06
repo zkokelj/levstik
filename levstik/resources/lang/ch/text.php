@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title' => 'Levstikove aleje',
+    'title' => 'Levstikove aleje (斯蒂克)',
     'description' => '
     在弗兰·列夫斯蒂克（Fran Levstik）诞辰184周年之际，列夫斯蒂克（Levstik）拥有终身成就获得者胡同的小巷拱廊在财团书店里隆重开幕。
 
@@ -19,7 +19,9 @@ return [
     'more_info' => '更多信息',
     'edit' => '编辑',
     'delete' => '删除',
-    'logout' => '删除'
+    'logout' => '删除',
+    'about_description' => 'Lorem ipsum, ....',
+    'construction' => '删除删',
 
 
 ];

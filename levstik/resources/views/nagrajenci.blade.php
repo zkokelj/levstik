@@ -3,7 +3,7 @@
 @section('content')
 <section class="container">
     @foreach(array_chunk($winners->toArray(), 3) as $x)
-    <div class="columns features">
+    <div class="columns">
         @foreach($x as $w)
         <div class="column is-4">
             <div class="card is-shady">
@@ -25,9 +25,8 @@
                                 {{ $w['short_info_ch'] }}
                             @endif
                         </p>
-
-                        <p>Purus semper eget duis at tellus at urna condimentum mattis. Non blandit massa enim nec. Integer enim neque volutpat ac tincidunt vitae semper quis. Accumsan tortor posuere ac ut consequat semper viverra nam.</p>
-                        <p><a href="#">Learn more</a></p>
+                        
+                        <p><a href="/nagrajenci/{{ $w['full_name_id']}}">{{__('text.more_info')}}</a></p>
                     </div>
                 </div>
             </div>
