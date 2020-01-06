@@ -33,8 +33,6 @@
             </div>
             </div>
         </div>
-    
-
                 <div class="field is-horizontal">
                         <div class="field-label is-normal">
                                 <div class="file has-sname is-risght">
