@@ -1,18 +1,33 @@
-# levstik
-Levstikova aleja nagrajencev (spletna stran)
+# Levstikova aleja nagrajencev
+
+Website for Levstik lifetime achievement award winners.
+
+## Technologies used
+
+- Laravel
+- Bulma CSS
+- MySql
+- JavaScript
+
+## Website features
+- Multi-language support
+- Responsive design
+- CRUD operations supported
+- Registration & login system
 
 
-## Navodila za poganjanje spletne strani
+## Screenshots
+Award winners view...
+![Screenshot](screenshots/Example.png)
 
-Najlažji način poganjanja spletne strani lokalno je 
-sledenje navodilom na strani [klik]: https://laravel.com/docs/6.x/homestead
-Na ta način boste pognali tako spletni strežnik, kot podatkovno bazo.
+... with multi-language support.
+![Screenshot](screenshots/Example2.png)
 
-#### Poganjanje brez podatkovne baze
-`cd levstik`
-`php artisan serve`
 
-V tem primeru je potrebno v `.env` datoteki spremeniti podatke za dostop do podatkovne baze
-na delujočo instanco MySql/Postgress. V nasprotnem primeru strani, ki potrebujejo dostop do
-podatkovne baze ne bodo delovale.
+Mobile view
 
+![Screenshot](screenshots/Prikaz_telefoni.png)
+
+Adding new winner view
+
+![Screenshot](screenshots/Dodajanje_novega.png)
